@@ -38,6 +38,14 @@ export default class Block {
             this.position.y = this.parentBlock.position.y + this.distance * Math.sin(this.parentBlock.rotation + this.direction);
             this.position.z = this.parentBlock.position.z - 1;
             if (this.parentBlock.rotation != this.rotation) {
+                // rotate in the shortest side to equal the parent rotation
+                if (Math.abs(this.parentBlock.rotation - this.rotation) > Math.PI) {
+                    if (this.parentBlock.rotation > this.rotation) {
+                        this.rotation += 2 * Math.PI;
+                    } else {
+                        this.rotation -= 2 * Math.PI;
+                    }
+                }
                 this.rotation += (this.parentBlock.rotation - this.rotation )/20;
             }
         }
