@@ -1,0 +1,29 @@
+{
+  "name": "sharks",
+  "version": "1.0.0",
+  "description": "shark movement simulation in 2d",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "start:dev": "webpack-dev-server --open --config webpack.dev.config.js"
+  },
+  "keywords": [
+    "shark",
+    "web"
+  ],
+  "author": "Luckbox314",
+  "license": "ISC",
+  "dependencies": {
+    "three": "^0.155.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "gh-pages": "^5.0.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
